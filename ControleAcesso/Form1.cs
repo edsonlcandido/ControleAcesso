@@ -34,14 +34,16 @@ namespace ControleAcesso
             // TODO: Implement your logic here
 
             // Save the user to the database using Identity
-            var userManager = _serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
-            var user = new IdentityUser(_windowsUsername.IndetityUserName);
-            //verify if user exists in the database if not create it
+            var userManager = _serviceProvider.GetRequiredService<UserManager<Usuario>>();
+            var user = new Usuario(_windowsUsername.IndetityUserName);
+            // Verify if user exists in the database, if not create it
+
             var result = await userManager.CreateAsync(user);
             if (!result.Succeeded)
             {
                 // Handle error
             }
+
         }
     }
 }

@@ -10,6 +10,7 @@ namespace ControleAcesso
 {
     public class ApplicationDbContext:IdentityDbContext
     {
+        DbSet<Usuario> Usuarios { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=Application.db");

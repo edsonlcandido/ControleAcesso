@@ -15,5 +15,9 @@ namespace ControleAcesso
         }
         [DisplayName("Usuario")]
         public override string UserName { get => base.UserName; set => base.UserName = value; }
+        public string DisplayName { get { 
+                return this.NormalizedEmail.Replace("_","\\"); 
+            } 
+        }
     }
 }

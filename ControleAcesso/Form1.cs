@@ -30,19 +30,7 @@ namespace ControleAcesso
 
         private async void Form1_Shown(object sender, EventArgs e)
         {
-            // Use the Windows username to open the system
-            // TODO: Implement your logic here
 
-            // Save the user to the database using Identity
-            var userManager = _serviceProvider.GetRequiredService<UserManager<Usuario>>();
-            var user = new Usuario(_windowsUsername.IndetityUserName);
-            // Verify if user exists in the database, if not create it
-
-            var result = await userManager.CreateAsync(user);
-            if (!result.Succeeded)
-            {
-                // Handle error
-            }
 
         }
     }

@@ -35,9 +35,13 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             button1 = new Button();
             panel1 = new Panel();
+            dataGridViewUsers = new DataGridView();
+            dataGridViewRoles = new DataGridView();
             panelSidePanel.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewRoles).BeginInit();
             SuspendLayout();
             // 
             // panelSidePanel
@@ -117,11 +121,37 @@
             panel1.Size = new Size(160, 64);
             panel1.TabIndex = 0;
             // 
+            // dataGridViewUsers
+            // 
+            dataGridViewUsers.AllowUserToAddRows = false;
+            dataGridViewUsers.AllowUserToDeleteRows = false;
+            dataGridViewUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewUsers.Location = new Point(173, 68);
+            dataGridViewUsers.Name = "dataGridViewUsers";
+            dataGridViewUsers.ReadOnly = true;
+            dataGridViewUsers.RowTemplate.Height = 25;
+            dataGridViewUsers.Size = new Size(599, 239);
+            dataGridViewUsers.TabIndex = 1;
+            // 
+            // dataGridViewRoles
+            // 
+            dataGridViewRoles.AllowUserToAddRows = false;
+            dataGridViewRoles.AllowUserToDeleteRows = false;
+            dataGridViewRoles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewRoles.Location = new Point(173, 310);
+            dataGridViewRoles.Name = "dataGridViewRoles";
+            dataGridViewRoles.ReadOnly = true;
+            dataGridViewRoles.RowTemplate.Height = 25;
+            dataGridViewRoles.Size = new Size(599, 239);
+            dataGridViewRoles.TabIndex = 2;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 561);
+            Controls.Add(dataGridViewRoles);
+            Controls.Add(dataGridViewUsers);
             Controls.Add(panelSidePanel);
             Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(3, 4, 3, 4);
@@ -132,6 +162,8 @@
             panelSidePanel.ResumeLayout(false);
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewRoles).EndInit();
             ResumeLayout(false);
         }
 
@@ -144,5 +176,7 @@
         private Button button2;
         private Button button3;
         private Button button1;
+        private DataGridView dataGridViewUsers;
+        private DataGridView dataGridViewRoles;
     }
 }

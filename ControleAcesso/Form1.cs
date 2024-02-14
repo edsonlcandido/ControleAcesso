@@ -30,8 +30,15 @@ namespace ControleAcesso
 
         private async void Form1_Shown(object sender, EventArgs e)
         {
+            //obter a lista de usuarios do banco de dados
+            var userManager = _serviceProvider.GetRequiredService<UserManager<Usuario>>();
+            var users = userManager.Users.ToList();
 
+            var rolesManager = _serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var roles = rolesManager.Roles.ToList();
 
+            dataGridViewUsers.DataSource = users;
+            dataGridViewRoles.DataSource = roles;
         }
     }
 }

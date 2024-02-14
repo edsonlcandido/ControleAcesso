@@ -12,11 +12,11 @@ namespace ControleAcesso
     {
         public Usuario(string userName) : base(userName)
         {
-        }
-        [DisplayName("Usuario")]
+        }        
         public override string UserName { get => base.UserName; set => base.UserName = value; }
+        [DisplayName("Usuario")]
         public string DisplayName { get { 
-                return this.NormalizedEmail.Replace("_","\\"); 
+                return this.NormalizedUserName.Replace("_","\\"); 
             } 
         }
     }

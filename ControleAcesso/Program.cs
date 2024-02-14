@@ -26,6 +26,7 @@ namespace ControleAcesso
             services.AddDbContext<ApplicationDbContext>();
 
             services.AddIdentityCore<Usuario>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             var serviceProvider = services.BuildServiceProvider();

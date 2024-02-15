@@ -1,6 +1,6 @@
 ﻿namespace ControleAcesso
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,10 +33,14 @@
             button2 = new Button();
             button3 = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            button1 = new Button();
+            buttonShowRolesUser = new Button();
             panel1 = new Panel();
             dataGridViewUsers = new DataGridView();
             dataGridViewRoles = new DataGridView();
+            buttonAddUser = new Button();
+            textBoxAddUser = new TextBox();
+            textBoxAddRole = new TextBox();
+            buttonAddRole = new Button();
             panelSidePanel.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -94,22 +98,22 @@
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.BackColor = Color.Bisque;
-            flowLayoutPanel1.Controls.Add(button1);
+            flowLayoutPanel1.Controls.Add(buttonShowRolesUser);
             flowLayoutPanel1.Location = new Point(3, 4);
             flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(160, 133);
             flowLayoutPanel1.TabIndex = 1;
             // 
-            // button1
+            // buttonShowRolesUser
             // 
-            button1.Location = new Point(3, 4);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(86, 31);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            buttonShowRolesUser.Location = new Point(3, 4);
+            buttonShowRolesUser.Margin = new Padding(3, 4, 3, 4);
+            buttonShowRolesUser.Name = "buttonShowRolesUser";
+            buttonShowRolesUser.Size = new Size(86, 31);
+            buttonShowRolesUser.TabIndex = 0;
+            buttonShowRolesUser.Text = "button1";
+            buttonShowRolesUser.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -126,11 +130,11 @@
             dataGridViewUsers.AllowUserToAddRows = false;
             dataGridViewUsers.AllowUserToDeleteRows = false;
             dataGridViewUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewUsers.Location = new Point(173, 68);
+            dataGridViewUsers.Location = new Point(466, 4);
             dataGridViewUsers.Name = "dataGridViewUsers";
             dataGridViewUsers.ReadOnly = true;
             dataGridViewUsers.RowTemplate.Height = 25;
-            dataGridViewUsers.Size = new Size(599, 239);
+            dataGridViewUsers.Size = new Size(306, 239);
             dataGridViewUsers.TabIndex = 1;
             // 
             // dataGridViewRoles
@@ -138,24 +142,64 @@
             dataGridViewRoles.AllowUserToAddRows = false;
             dataGridViewRoles.AllowUserToDeleteRows = false;
             dataGridViewRoles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewRoles.Location = new Point(173, 310);
+            dataGridViewRoles.Location = new Point(466, 273);
             dataGridViewRoles.Name = "dataGridViewRoles";
             dataGridViewRoles.ReadOnly = true;
             dataGridViewRoles.RowTemplate.Height = 25;
-            dataGridViewRoles.Size = new Size(599, 239);
+            dataGridViewRoles.Size = new Size(306, 276);
             dataGridViewRoles.TabIndex = 2;
             // 
-            // Form1
+            // buttonAddUser
+            // 
+            buttonAddUser.Location = new Point(374, 8);
+            buttonAddUser.Margin = new Padding(3, 4, 3, 4);
+            buttonAddUser.Name = "buttonAddUser";
+            buttonAddUser.Size = new Size(86, 31);
+            buttonAddUser.TabIndex = 3;
+            buttonAddUser.Text = "Add user";
+            buttonAddUser.UseVisualStyleBackColor = true;
+            buttonAddUser.Click += buttonAddUser_Click;
+            // 
+            // textBoxAddUser
+            // 
+            textBoxAddUser.Location = new Point(173, 10);
+            textBoxAddUser.Name = "textBoxAddUser";
+            textBoxAddUser.Size = new Size(195, 27);
+            textBoxAddUser.TabIndex = 4;
+            // 
+            // textBoxAddRole
+            // 
+            textBoxAddRole.Location = new Point(173, 275);
+            textBoxAddRole.Name = "textBoxAddRole";
+            textBoxAddRole.Size = new Size(195, 27);
+            textBoxAddRole.TabIndex = 6;
+            // 
+            // buttonAddRole
+            // 
+            buttonAddRole.Location = new Point(374, 273);
+            buttonAddRole.Margin = new Padding(3, 4, 3, 4);
+            buttonAddRole.Name = "buttonAddRole";
+            buttonAddRole.Size = new Size(86, 31);
+            buttonAddRole.TabIndex = 5;
+            buttonAddRole.Text = "Add role";
+            buttonAddRole.UseVisualStyleBackColor = true;
+            buttonAddRole.Click += buttonAddRole_Click;
+            // 
+            // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 561);
+            ClientSize = new Size(1087, 561);
+            Controls.Add(textBoxAddRole);
+            Controls.Add(buttonAddRole);
+            Controls.Add(textBoxAddUser);
+            Controls.Add(buttonAddUser);
             Controls.Add(dataGridViewRoles);
             Controls.Add(dataGridViewUsers);
             Controls.Add(panelSidePanel);
             Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(3, 4, 3, 4);
-            Name = "Form1";
+            Name = "FormMain";
             Text = "Form1";
             Load += Form1_Load;
             Shown += Form1_Shown;
@@ -165,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewRoles).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -175,8 +220,12 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Button button2;
         private Button button3;
-        private Button button1;
+        private Button buttonShowRolesUser;
         private DataGridView dataGridViewUsers;
         private DataGridView dataGridViewRoles;
+        private Button buttonAddUser;
+        private TextBox textBoxAddUser;
+        private TextBox textBoxAddRole;
+        private Button buttonAddRole;
     }
 }

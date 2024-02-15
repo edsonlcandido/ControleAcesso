@@ -31,7 +31,7 @@ namespace ControleAcesso
 
             var serviceProvider = services.BuildServiceProvider();
 
-            Application.Run(new Form1(windowsUserName, serviceProvider));
+            Application.Run(new FormMain(windowsUserName, serviceProvider));
         }
     }
 }

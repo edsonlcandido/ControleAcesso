@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panelSidePanel = new Panel();
-            flowLayoutPanel2 = new FlowLayoutPanel();
+            flowLayoutPanelAdminControls = new FlowLayoutPanel();
             button2 = new Button();
             button3 = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -41,8 +41,13 @@
             textBoxAddUser = new TextBox();
             textBoxAddRole = new TextBox();
             buttonAddRole = new Button();
+            buttonUserDetails = new Button();
+            button1 = new Button();
+            flowLayoutPanelUserRoles = new FlowLayoutPanel();
+            flowLayoutPanelUserByRole = new FlowLayoutPanel();
+            buttonAddRoleToUser = new Button();
             panelSidePanel.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
+            flowLayoutPanelAdminControls.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewRoles).BeginInit();
@@ -50,7 +55,7 @@
             // 
             // panelSidePanel
             // 
-            panelSidePanel.Controls.Add(flowLayoutPanel2);
+            panelSidePanel.Controls.Add(flowLayoutPanelAdminControls);
             panelSidePanel.Controls.Add(flowLayoutPanel1);
             panelSidePanel.Controls.Add(panel1);
             panelSidePanel.Dock = DockStyle.Left;
@@ -60,19 +65,19 @@
             panelSidePanel.Size = new Size(167, 561);
             panelSidePanel.TabIndex = 0;
             // 
-            // flowLayoutPanel2
+            // flowLayoutPanelAdminControls
             // 
-            flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            flowLayoutPanel2.BackColor = Color.Salmon;
-            flowLayoutPanel2.Controls.Add(button2);
-            flowLayoutPanel2.Controls.Add(button3);
-            flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel2.Location = new Point(3, 145);
-            flowLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(160, 340);
-            flowLayoutPanel2.TabIndex = 2;
-            flowLayoutPanel2.Visible = false;
+            flowLayoutPanelAdminControls.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanelAdminControls.BackColor = Color.Salmon;
+            flowLayoutPanelAdminControls.Controls.Add(button2);
+            flowLayoutPanelAdminControls.Controls.Add(button3);
+            flowLayoutPanelAdminControls.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanelAdminControls.Location = new Point(3, 145);
+            flowLayoutPanelAdminControls.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanelAdminControls.Name = "flowLayoutPanelAdminControls";
+            flowLayoutPanelAdminControls.Size = new Size(160, 340);
+            flowLayoutPanelAdminControls.TabIndex = 2;
+            flowLayoutPanelAdminControls.Visible = false;
             // 
             // button2
             // 
@@ -134,7 +139,7 @@
             dataGridViewUsers.Name = "dataGridViewUsers";
             dataGridViewUsers.ReadOnly = true;
             dataGridViewUsers.RowTemplate.Height = 25;
-            dataGridViewUsers.Size = new Size(306, 239);
+            dataGridViewUsers.Size = new Size(229, 239);
             dataGridViewUsers.TabIndex = 1;
             // 
             // dataGridViewRoles
@@ -146,7 +151,7 @@
             dataGridViewRoles.Name = "dataGridViewRoles";
             dataGridViewRoles.ReadOnly = true;
             dataGridViewRoles.RowTemplate.Height = 25;
-            dataGridViewRoles.Size = new Size(306, 276);
+            dataGridViewRoles.Size = new Size(229, 276);
             dataGridViewRoles.TabIndex = 2;
             // 
             // buttonAddUser
@@ -185,11 +190,62 @@
             buttonAddRole.UseVisualStyleBackColor = true;
             buttonAddRole.Click += buttonAddRole_Click;
             // 
+            // buttonUserDetails
+            // 
+            buttonUserDetails.Location = new Point(701, 4);
+            buttonUserDetails.Name = "buttonUserDetails";
+            buttonUserDetails.Size = new Size(86, 31);
+            buttonUserDetails.TabIndex = 7;
+            buttonUserDetails.Text = "Roles v";
+            buttonUserDetails.UseVisualStyleBackColor = true;
+            buttonUserDetails.Click += buttonUserDetails_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(701, 275);
+            button1.Name = "button1";
+            button1.Size = new Size(86, 31);
+            button1.TabIndex = 8;
+            button1.Text = "Users v";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanelUserRoles
+            // 
+            flowLayoutPanelUserRoles.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanelUserRoles.Location = new Point(701, 41);
+            flowLayoutPanelUserRoles.Name = "flowLayoutPanelUserRoles";
+            flowLayoutPanelUserRoles.Size = new Size(303, 202);
+            flowLayoutPanelUserRoles.TabIndex = 9;
+            // 
+            // flowLayoutPanelUserByRole
+            // 
+            flowLayoutPanelUserByRole.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanelUserByRole.Location = new Point(701, 312);
+            flowLayoutPanelUserByRole.Name = "flowLayoutPanelUserByRole";
+            flowLayoutPanelUserByRole.Size = new Size(303, 202);
+            flowLayoutPanelUserByRole.TabIndex = 10;
+            // 
+            // buttonAddRoleToUser
+            // 
+            buttonAddRoleToUser.Location = new Point(339, 47);
+            buttonAddRoleToUser.Margin = new Padding(3, 4, 3, 4);
+            buttonAddRoleToUser.Name = "buttonAddRoleToUser";
+            buttonAddRoleToUser.Size = new Size(121, 31);
+            buttonAddRoleToUser.TabIndex = 11;
+            buttonAddRoleToUser.Text = "Add Role to->";
+            buttonAddRoleToUser.UseVisualStyleBackColor = true;
+            buttonAddRoleToUser.Click += buttonAddRoleToUser_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1087, 561);
+            ClientSize = new Size(1016, 561);
+            Controls.Add(buttonAddRoleToUser);
+            Controls.Add(flowLayoutPanelUserByRole);
+            Controls.Add(flowLayoutPanelUserRoles);
+            Controls.Add(button1);
+            Controls.Add(buttonUserDetails);
             Controls.Add(textBoxAddRole);
             Controls.Add(buttonAddRole);
             Controls.Add(textBoxAddUser);
@@ -200,11 +256,11 @@
             Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormMain";
-            Text = "Form1";
+            Text = "Controle de usuários";
             Load += Form1_Load;
             Shown += Form1_Shown;
             panelSidePanel.ResumeLayout(false);
-            flowLayoutPanel2.ResumeLayout(false);
+            flowLayoutPanelAdminControls.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewUsers).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewRoles).EndInit();
@@ -216,7 +272,7 @@
 
         private Panel panelSidePanel;
         private Panel panel1;
-        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel flowLayoutPanelAdminControls;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button button2;
         private Button button3;
@@ -227,5 +283,10 @@
         private TextBox textBoxAddUser;
         private TextBox textBoxAddRole;
         private Button buttonAddRole;
+        private Button buttonUserDetails;
+        private Button button1;
+        private FlowLayoutPanel flowLayoutPanelUserRoles;
+        private FlowLayoutPanel flowLayoutPanelUserByRole;
+        private Button buttonAddRoleToUser;
     }
 }
